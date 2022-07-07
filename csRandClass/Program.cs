@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace csRandClass
 {
@@ -8,9 +7,10 @@ namespace csRandClass
         static void Main(string[] args)
         {
             var random = new Random(); //instance of random class
-            var buffer = new char[10]; //array to store the rand character
+            const int passwordLength = 10;
+            var buffer = new char[passwordLength]; //array to store the rand character
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < passwordLength; i++)
                 //Console.Write((char)random.Next(65, 122));
                 buffer[i] = (char)('a'+ random.Next(0, 26));
 
