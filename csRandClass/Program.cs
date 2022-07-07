@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace csRandClass
 {
@@ -11,11 +8,15 @@ namespace csRandClass
         static void Main(string[] args)
         {
             var random = new Random(); //instance of random class
+            var buffer = new char[10]; //array to store the rand character
+
             for (int i = 0; i < 10; i++)
                 //Console.Write((char)random.Next(65, 122));
-                Console.Write((char)('a'+ random.Next(0, 26)));
+                buffer[i] = (char)('a'+ random.Next(0, 26));
 
-            Console.WriteLine();
+            var password = new string(buffer);
+
+            Console.WriteLine(password);
         }
     }
 }
