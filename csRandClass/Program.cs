@@ -12,7 +12,9 @@ namespace csRandClass
         {
             var random = new Random(); //instance of random class
             for (int i = 0; i < 10; i++)
-                Console.Write((char)random.Next(65, 122));
+                //Console.Write((char)random.Next(65, 122));
+                Console.Write((char)('a'+ random.Next(0, 26)));
+
             Console.WriteLine();
         }
     }
